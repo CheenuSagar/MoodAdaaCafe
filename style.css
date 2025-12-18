@@ -172,3 +172,53 @@
     height: 85vh;
     background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url('images/Hero.jpg') center/cover no-repeat;
 }
+
+@media (max-width: 768px){
+
+  /* Navbar */
+  .navbar{
+    padding: 12px 20px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links{
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Hero Section */
+  .hero{
+    height: 70vh;
+    padding: 20px;
+  }
+
+  .hero-content h1{
+    font-size: 28px;
+  }
+
+  .hero-content p{
+    font-size: 15px;
+  }
+
+  /* Menu Cards */
+  .menu-box{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card{
+    width: 90%;
+  }
+
+  /* Contact Form */
+  .contact form{
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  /* Cart Modal */
+  .cart-box{
+    width: 90%;
+  }
+}
