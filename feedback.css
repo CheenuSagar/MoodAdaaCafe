@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f3ece4;
+    font-family: Poppins
+}
+
+.card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    width: 350px;
+    text-align: center
+}
+
+.stars span {
+    font-size: 28px;
+    color: #ccc;
+    cursor: pointer
+}
+
+.stars span.active {
+    color: gold
+}
+
+button {
+    background: #6f4e37;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 10px
+}

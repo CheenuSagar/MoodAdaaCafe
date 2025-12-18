@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Mood Adaa Cafe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="logo">Mood Adaa Cafe</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="cart-icon" onclick="openCart()">🛒 <span id="cartCount">0</span></div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content card">
+      <a href="#menu" </a>
+        <button>Explore Menu</button>
+    </div>
+  </section>
+
+  <section class="menu" id="menu">
+    <h2>Our Bestsellers</h2>
+    <div class="menu-box">
+
+      <div class="card">
+        <img src="images/cappuccino.jpg">
+        <h3>Cappuccino</h3>
+        <p class="price">₹180</p>
+        <button onclick="addToCart('Cappuccino',180)">Add to Cart</button>
+      </div>
+
+      <div class="card">
+        <img src="images/coldcoffee.jpg">
+        <h3>Cold Coffee</h3>
+        <p class="price">₹220</p>
+        <button onclick="addToCart('Cold Coffee',220)">Add to Cart</button>
+      </div>
+
+      <div class="card">
+        <img src="images/espresso.jpg">
+        <h3>Espresso</h3>
+        <p class="price">₹150</p>
+        <button onclick="addToCart('Espresso',150)">Add to Cart</button>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Name" required>
+      <input type="email" placeholder="Email" required>
+      <textarea placeholder="Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <div class="cart-modal" id="cartModal">
+    <div class="cart-box">
+      <h2>Order Summary</h2>
+      <div id="cartItems"></div>
+      <h3>Total: ₹<span id="totalPrice">0</span></h3>
+      <button class="pay" onclick="payNow()">Pay Online</button>
+      <button class="wa" onclick="orderWhatsApp()">Order on WhatsApp</button>
+      <button class="close" onclick="closeCart()">Close</button>
+    </div>
+  </div>
+
+  <a href="https://wa.me/+919756341454" class="whatsapp-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+  </a>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
