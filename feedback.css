@@ -1,0 +1,77 @@
+/* ===== FONTS ===== */
+body {
+  font-family: 'DM Sans', sans-serif;
+}
+
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+/* ===== BACKGROUND ===== */
+.feedback-bg {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(47, 25, 12, 0.9) 0%,
+      rgba(111, 78, 55, 0.8) 100%
+    ),
+    url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1200&q=80')
+      center / cover no-repeat;
+  min-height: 100vh;
+}
+
+/* ===== STAR RATING ===== */
+.star {
+  color: #e5e7eb;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.star:hover {
+  transform: scale(1.2);
+}
+
+.star.active {
+  color: #f5c518;
+}
+
+/* ===== VISIT TYPE BUTTONS ===== */
+.visit-btn {
+  transition: all 0.2s ease;
+}
+
+.visit-btn.active {
+  background: #6f4e37;
+  color: #fff;
+  border-color: #6f4e37;
+}
+
+.visit-btn:not(.active):hover {
+  border-color: #bf7a44;
+  color: #6f4e37;
+}
+
+/* ===== BREW COLOR UTILITIES ===== */
+/* (Tailwind CDN config handles brew-* colors via index.html) */
+/* These are fallback manual classes for feedback page */
+.text-brew-400 { color: #bf7a44; }
+.text-brew-700 { color: #47301f; }
+.text-brew-200 { color: #e8c9a0; }
+.bg-brew-500   { background-color: #6f4e37; }
+.hover\:bg-brew-600:hover { background-color: #5a3d2b; }
+.focus\:border-brew-400:focus { border-color: #bf7a44; }
+.border-brew-300 { border-color: #d4a070; }
+
+/* ===== SMOOTH TRANSITIONS ===== */
+* {
+  box-sizing: border-box;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+/* ===== CARD SHADOW ===== */
+.rounded-3xl {
+  border-radius: 1.5rem;
+}
