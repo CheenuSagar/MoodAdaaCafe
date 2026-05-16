@@ -11,16 +11,6 @@ body {
   background: #faf5ef;
 }
 
-/* ===== TAILWIND COLOR EXTENSION (used via CDN config) ===== */
-/* brew-50  : #fdf6f0 */
-/* brew-100 : #f5e6d3 */
-/* brew-200 : #e8c9a0 */
-/* brew-300 : #d4a070 */
-/* brew-400 : #bf7a44 */
-/* brew-500 : #6f4e37  (main brand) */
-/* brew-600 : #5a3d2b */
-/* brew-700 : #47301f */
-/* brew-800 : #352315 */
 
 /* ===== NAVBAR ===== */
 .navbar-scrolled {
