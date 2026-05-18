@@ -5,91 +5,72 @@
   <title>Feedback – Mood Adaa Café</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="feedback.css">
 </head>
-<body class="min-h-screen feedback-bg flex flex-col items-center justify-center px-4 py-20">
+<body class="feedback-bg" style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 16px">
 
   <!-- Back Link -->
-  <a href="index.html" class="text-brew-200 text-sm mb-8 hover:text-white transition-colors flex items-center gap-2">
-    ← Back to Mood Adaa Café
-  </a>
+  <a href="index.html" class="back-link">← Back to Mood Adaa Café</a>
 
-  <!-- Feedback Card -->
-  <div class="bg-white rounded-3xl shadow-2xl w-full max-w-md p-8">
+  <!-- Card -->
+  <div style="background:#fff;border-radius:24px;box-shadow:0 24px 60px rgba(0,0,0,0.2);width:100%;max-width:440px;padding:36px">
 
     <!-- Header -->
-    <div class="text-center mb-8">
-      <p class="text-brew-400 text-xs uppercase tracking-widest mb-2">Share Your Experience</p>
-      <h1 class="font-display text-3xl font-bold text-brew-700">Your Feedback</h1>
-      <p class="text-gray-400 text-sm mt-2">Help us brew better experiences ☕</p>
+    <div style="text-align:center;margin-bottom:28px">
+      <p style="color:#bf7a44;font-size:11px;text-transform:uppercase;letter-spacing:0.2em;margin-bottom:6px">Share Your Experience</p>
+      <h1 class="font-display" style="font-size:1.9rem;font-weight:700;color:#47301f">Your Feedback</h1>
+      <p style="color:#aaa;font-size:13px;margin-top:6px">Help us brew better experiences ☕</p>
     </div>
 
-    <!-- Form -->
-    <form id="feedbackForm" onsubmit="handleSubmit(event)" class="space-y-5">
+    <!-- FORM -->
+    <form id="feedbackForm" onsubmit="handleSubmit(event)">
 
       <!-- Name -->
-      <div>
-        <label class="text-xs font-medium text-gray-500 uppercase tracking-wider block mb-1">Name</label>
-        <input
-          type="text"
-          id="nameInput"
-          placeholder="Your name"
-          required
-          class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brew-400 transition-colors"
-        >
+      <div style="margin-bottom:18px">
+        <label style="font-size:11px;font-weight:500;color:#888;text-transform:uppercase;letter-spacing:0.1em;display:block;margin-bottom:6px">Name</label>
+        <input type="text" id="nameInput" placeholder="Your name" required class="fb-input">
       </div>
 
       <!-- Visit Type -->
-      <div>
-        <label class="text-xs font-medium text-gray-500 uppercase tracking-wider block mb-2">Visit Type</label>
-        <div class="flex gap-2 flex-wrap">
-          <button type="button" class="visit-btn active px-4 py-2 rounded-full border border-brew-300 text-xs font-medium transition-all" onclick="selectVisit(this)">Dine In</button>
-          <button type="button" class="visit-btn px-4 py-2 rounded-full border border-gray-200 text-xs font-medium transition-all" onclick="selectVisit(this)">Take Away</button>
-          <button type="button" class="visit-btn px-4 py-2 rounded-full border border-gray-200 text-xs font-medium transition-all" onclick="selectVisit(this)">WhatsApp Order</button>
+      <div style="margin-bottom:18px">
+        <label style="font-size:11px;font-weight:500;color:#888;text-transform:uppercase;letter-spacing:0.1em;display:block;margin-bottom:8px">Visit Type</label>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button type="button" class="visit-btn active" onclick="selectVisit(this)" style="padding:7px 16px;border-radius:999px;font-size:12px;font-weight:500">Dine In</button>
+          <button type="button" class="visit-btn"        onclick="selectVisit(this)" style="padding:7px 16px;border-radius:999px;font-size:12px;font-weight:500">Take Away</button>
+          <button type="button" class="visit-btn"        onclick="selectVisit(this)" style="padding:7px 16px;border-radius:999px;font-size:12px;font-weight:500">WhatsApp Order</button>
         </div>
       </div>
 
       <!-- Star Rating -->
-      <div>
-        <label class="text-xs font-medium text-gray-500 uppercase tracking-wider block mb-2">Rating</label>
-        <div class="flex gap-1 justify-center" id="starsContainer">
-          <span class="star text-4xl cursor-pointer select-none" data-val="1" onclick="setRating(1)">★</span>
-          <span class="star text-4xl cursor-pointer select-none" data-val="2" onclick="setRating(2)">★</span>
-          <span class="star text-4xl cursor-pointer select-none" data-val="3" onclick="setRating(3)">★</span>
-          <span class="star text-4xl cursor-pointer select-none" data-val="4" onclick="setRating(4)">★</span>
-          <span class="star text-4xl cursor-pointer select-none" data-val="5" onclick="setRating(5)">★</span>
+      <div style="margin-bottom:18px">
+        <label style="font-size:11px;font-weight:500;color:#888;text-transform:uppercase;letter-spacing:0.1em;display:block;margin-bottom:8px">Rating</label>
+        <div id="starsContainer" style="display:flex;gap:4px;justify-content:center">
+          <span class="star" style="font-size:36px" onclick="setRating(1)">★</span>
+          <span class="star" style="font-size:36px" onclick="setRating(2)">★</span>
+          <span class="star" style="font-size:36px" onclick="setRating(3)">★</span>
+          <span class="star" style="font-size:36px" onclick="setRating(4)">★</span>
+          <span class="star" style="font-size:36px" onclick="setRating(5)">★</span>
         </div>
-        <p id="ratingLabel" class="text-center text-xs text-gray-400 mt-1">Tap to rate</p>
+        <p id="ratingLabel">Tap to rate</p>
       </div>
 
       <!-- Message -->
-      <div>
-        <label class="text-xs font-medium text-gray-500 uppercase tracking-wider block mb-1">Message</label>
-        <textarea
-          id="msgInput"
-          placeholder="Tell us about your experience..."
-          rows="4"
-          required
-          class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brew-400 transition-colors resize-none"
-        ></textarea>
+      <div style="margin-bottom:22px">
+        <label style="font-size:11px;font-weight:500;color:#888;text-transform:uppercase;letter-spacing:0.1em;display:block;margin-bottom:6px">Message</label>
+        <textarea id="msgInput" placeholder="Tell us about your experience..." rows="4" required class="fb-input" style="resize:none"></textarea>
       </div>
 
       <!-- Submit -->
-      <button
-        type="submit"
-        class="w-full bg-brew-500 hover:bg-brew-600 text-white py-3.5 rounded-xl font-medium transition-all hover:scale-[1.01] active:scale-[0.99]"
-      >
-        Submit Feedback ✨
-      </button>
+      <button type="submit" class="submit-btn">Submit Feedback ✨</button>
+
     </form>
 
-    <!-- Success State (hidden by default) -->
-    <div id="successMsg" class="hidden text-center py-8">
-      <div class="text-6xl mb-4">🎉</div>
-      <h2 class="font-display text-2xl font-bold text-brew-700 mb-2">Thank You!</h2>
-      <p class="text-gray-500 text-sm">Your feedback means the world to us.<br>We'll keep brewing happiness for you!</p>
-      <a href="index.html" class="inline-block mt-6 bg-brew-500 text-white px-6 py-3 rounded-xl text-sm font-medium hover:bg-brew-600 transition-colors">
+    <!-- Success State -->
+    <div id="successMsg" style="display:none;text-align:center;padding:40px 0">
+      <div style="font-size:56px;margin-bottom:16px">🎉</div>
+      <h2 class="font-display" style="font-size:1.6rem;font-weight:700;color:#47301f;margin-bottom:8px">Thank You!</h2>
+      <p style="color:#888;font-size:14px;line-height:1.6">Your feedback means the world to us.<br>We'll keep brewing happiness for you!</p>
+      <a href="index.html" style="display:inline-block;margin-top:24px;background:#6f4e37;color:#fff;padding:12px 28px;border-radius:12px;font-size:14px;font-weight:500;text-decoration:none">
         Back to Café ☕
       </a>
     </div>
