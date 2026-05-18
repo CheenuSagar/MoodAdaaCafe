@@ -19,7 +19,9 @@ body {
 /* ===== NAVBAR ===== */
 .navbar-scrolled {
   box-shadow: 0 4px 30px rgba(111, 78, 55, 0.18);
+  
 }
+
 
 /* ===== MOBILE MENU ===== */
 #mobileMenu {
@@ -62,7 +64,7 @@ body {
   box-shadow: 0 20px 40px rgba(111,78,55,0.22);
 }
 
-/* ===== TAB BUTTONS ===== */
+/* == TAB BUTTONS == */
 .tab-btn {
   border-color: #d4a070;
   color: #6f4e37;
