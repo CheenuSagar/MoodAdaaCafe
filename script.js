@@ -1,8 +1,3 @@
-// ============================================
-//   MOOD ADAA CAFÉ — script.js
-// ============================================
-
-// ===== MENU DATA =====
 const menuData = [
   // Coffee
   { id:1,  name:'Cappuccino',            price:180, cat:'coffee',  emoji:'☕', desc:'Espresso with velvety steamed milk & foam',                img:'https://images.unsplash.com/photo-1534040385115-33dcb3acba5b?w=400&q=80', popular:true  },
