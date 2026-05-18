@@ -1,77 +1,90 @@
-/* ===== FONTS ===== */
+/* ============================================
+   MOOD ADAA CAFÉ — feedback.css
+   ============================================ */
+
+* { box-sizing: border-box; }
+
 body {
   font-family: 'DM Sans', sans-serif;
-}
-
-.font-display {
-  font-family: 'Playfair Display', serif;
-}
-
-/* ===== BACKGROUND ===== */
-.feedback-bg {
-  background:
-    linear-gradient(
-      135deg,
-      rgba(47, 25, 12, 0.9) 0%,
-      rgba(111, 78, 55, 0.8) 100%
-    ),
-    url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1200&q=80')
-      center / cover no-repeat;
   min-height: 100vh;
 }
 
-/* ===== STAR RATING ===== */
+.font-display { font-family: 'Playfair Display', serif; }
+
+.feedback-bg {
+  background:
+    linear-gradient(135deg, rgba(35,18,8,0.90) 0%, rgba(111,78,55,0.80) 100%),
+    url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1200&q=80')
+      center / cover no-repeat fixed;
+}
+
+/* Stars */
 .star {
   color: #e5e7eb;
-  transition: color 0.2s, transform 0.2s;
+  cursor: pointer;
+  display: inline-block;
+  transition: color 0.15s, transform 0.15s;
 }
+.star:hover  { transform: scale(1.2); }
+.star.lit    { color: #f5c518; }
 
-.star:hover {
-  transform: scale(1.2);
-}
-
-.star.active {
-  color: #f5c518;
-}
-
-/* ===== VISIT TYPE BUTTONS ===== */
+/* Visit buttons */
 .visit-btn {
-  transition: all 0.2s ease;
+  cursor: pointer;
+  background: #fff;
+  color: #6f4e37;
+  border: 1px solid #d4a070;
+  transition: all 0.2s;
 }
+.visit-btn:hover  { border-color: #6f4e37; }
+.visit-btn.active { background: #6f4e37; color: #fff; border-color: #6f4e37; }
 
-.visit-btn.active {
+/* Inputs */
+.fb-input {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.fb-input:focus { border-color: #bf7a44; }
+
+/* Submit */
+.submit-btn {
+  width: 100%;
   background: #6f4e37;
   color: #fff;
-  border-color: #6f4e37;
+  border: none;
+  padding: 14px;
+  border-radius: 0.75rem;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+.submit-btn:hover  { background: #5a3d2b; }
+.submit-btn:active { transform: scale(0.99); }
+
+#ratingLabel {
+  text-align: center;
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 6px;
+  min-height: 18px;
 }
 
-.visit-btn:not(.active):hover {
-  border-color: #bf7a44;
-  color: #6f4e37;
+.back-link {
+  color: #e8c9a0;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 28px;
+  transition: color 0.2s;
 }
-
-/* ===== BREW COLOR UTILITIES ===== */
-/* (Tailwind CDN config handles brew-* colors via index.html) */
-/* These are fallback manual classes for feedback page */
-.text-brew-400 { color: #bf7a44; }
-.text-brew-700 { color: #47301f; }
-.text-brew-200 { color: #e8c9a0; }
-.bg-brew-500   { background-color: #6f4e37; }
-.hover\:bg-brew-600:hover { background-color: #5a3d2b; }
-.focus\:border-brew-400:focus { border-color: #bf7a44; }
-.border-brew-300 { border-color: #d4a070; }
-
-/* ===== SMOOTH TRANSITIONS ===== */
-* {
-  box-sizing: border-box;
-}
-
-input:focus,
-textarea:focus {
-  outline: none;
-}
-
-/* ===== CARD SHADOW ===== */
-.rounded-3xl {
-  border-radius: 1.5rem;
-}
+.back-link:hover { color: #fff; }
