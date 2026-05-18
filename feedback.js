@@ -1,6 +1,3 @@
-// ============================================
-//   MOOD ADAA CAFÉ — feedback.js
-// ============================================
 
 let currentRating = 0;
 let selectedVisit = 'Dine In';
