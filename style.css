@@ -1,62 +1,32 @@
-/* ===== TAILWIND CUSTOM CONFIG ===== */
-/* (Tailwind CDN config is in index.html head) */
+/* ============================================
+   MOOD ADAA CAFÉ — style.css
+   ============================================ */
 
-/* ===== FONTS ===== */
-.font-display {
-  font-family: 'Playfair Display', serif;
+/* ===== RESET & BASE ===== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: 'DM Sans', sans-serif;
   background: #faf5ef;
+  color: #333;
 }
 
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
 
 /* ===== NAVBAR ===== */
 .navbar-scrolled {
-  box-shadow: 0 4px 30px rgba(111, 78, 55, 0.15);
+  box-shadow: 0 4px 30px rgba(111, 78, 55, 0.18);
 }
 
-/* ===== HERO ===== */
-.hero-bg {
-  background: linear-gradient(
-      135deg,
-      rgba(47, 25, 12, 0.82) 0%,
-      rgba(111, 78, 55, 0.6) 100%
-    ),
-    url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1600&q=80')
-      center / cover no-repeat;
-}
-
-/* ===== MENU CARDS ===== */
-.menu-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.menu-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(111, 78, 55, 0.25);
-}
-
-/* ===== TAB BUTTONS ===== */
-.tab-btn:hover {
-  background: #6f4e37;
-  color: #fff;
-}
-.tab-btn.active {
-  background: #6f4e37;
-  color: #fff;
-}
-
-/* ===== CART BADGE ===== */
-.badge {
-  background: #6f4e37;
-  color: #fff;
-  font-size: 10px;
-  padding: 2px 6px;
-  border-radius: 999px;
-}
-
-/* ===== MOBILE MENU SLIDE ===== */
+/* ===== MOBILE MENU ===== */
 #mobileMenu {
   max-height: 0;
   opacity: 0;
@@ -68,7 +38,55 @@ body {
   opacity: 1;
 }
 
-/* ===== GALLERY IMAGES ===== */
+/* ===== CART BADGE ===== */
+.badge {
+  background: #6f4e37;
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 999px;
+}
+
+/* ===== HERO ===== */
+.hero-bg {
+  background:
+    linear-gradient(135deg, rgba(35,18,8,0.88) 0%, rgba(111,78,55,0.65) 100%),
+    url('images/Hero.jpg') center / cover no-repeat;
+}
+
+/* ===== MENU CARDS ===== */
+.menu-card {
+  background: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.menu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(111,78,55,0.22);
+}
+
+/* ===== TAB BUTTONS ===== */
+.tab-btn {
+  border-color: #d4a070;
+  color: #6f4e37;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.tab-btn:hover,
+.tab-btn.active {
+  background: #6f4e37;
+  color: #fff;
+  border-color: #6f4e37;
+}
+
+/* ===== ABOUT DOT PATTERN ===== */
+.dot-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='20' cy='20' r='1.2' fill='white'/%3E%3C/svg%3E");
+}
+
+/* ===== GALLERY ===== */
 .gallery-img {
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -77,27 +95,7 @@ body {
   transform: scale(1.04);
 }
 
-/* ===== WHATSAPP FLOAT PULSE ===== */
-.wa-float {
-  animation: pulse 2s infinite;
-}
-@keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
-  50%       { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
-}
-
-/* ===== SECTION FADE-IN ===== */
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.fade-in.visible {
-  opacity: 1;
-  transform: none;
-}
-
-/* ===== DECORATIVE UNDERLINE ===== */
+/* ===== DECO UNDERLINE ===== */
 .deco-line::after {
   content: '';
   display: block;
@@ -108,22 +106,47 @@ body {
   border-radius: 2px;
 }
 
-/* ===== ABOUT DOT PATTERN ===== */
-.dot-pattern {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='20' cy='20' r='1' fill='white'/%3E%3C/svg%3E");
+/* ===== CONTACT INPUTS ===== */
+.contact-input {
+  outline: none;
+  transition: border-color 0.2s;
+}
+.contact-input:focus {
+  border-color: #bf7a44;
 }
 
-/* ===== SMOOTH SCROLL ===== */
-html {
-  scroll-behavior: smooth;
+/* ===== FADE-IN ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* ===== CART MODAL ===== */
-#cartModal {
-  transition: opacity 0.3s ease;
+/* ===== WHATSAPP FLOAT ===== */
+.wa-float {
+  animation: waPulse 2.2s infinite;
+}
+@keyframes waPulse {
+  0%,100% { box-shadow: 0 0 0 0    rgba(37,211,102,0.55); }
+  50%      { box-shadow: 0 0 0 14px rgba(37,211,102,0);   }
 }
 
-/* ===== RESPONSIVE FIXES ===== */
+/* ===== CART ITEM ROW ===== */
+.cart-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fdf6f0;
+  border-radius: 0.75rem;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .hero-bg {
     background-position: center center;
